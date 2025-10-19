@@ -37,4 +37,3 @@ prisma/
 
 ## 🤝 Connect with me
 - [LinkedIn](https://www.linkedin.com/in/muhammad-fasih-zahid-343093211)
-- [GitHub](https://github.com/fasihzahid10)
