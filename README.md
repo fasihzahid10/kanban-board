@@ -1,6 +1,6 @@
 # Next.js Kanban (Full-Stack in one app)
 
-A complete **Kanban board** built with **Next.js (App Router) + API Routes**, **Prisma (SQLite)**, **TailwindCSS**, and **dnd-kit** for drag & drop.
+🚀 A complete **Kanban board** built with **Next.js (App Router) + API Routes**, **Prisma (SQLite)**, **TailwindCSS**, and **dnd-kit** for drag & drop.
 
 ## ✨ Features
 - Boards list (create/delete)
