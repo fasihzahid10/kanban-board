@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Board {
+  id        String   @id @default(cuid())
+  title     String
+  createdAt DateTime @default(now())
+  columns   Column[]
+  cards     Card[]        // <-- back relation added
+}
+
+model Column {
+  id      String  @id @default(cuid())
+  title   String
+  order   Int
+  boardId String
+  board   Board   @relation(fields: [boardId], references: [id])
+  cards   Card[]
+}
+
+model Card {
+  id          String    @id @default(cuid())
+  title       String
+  description String    @default("")
+  order       Int
+  dueDate     DateTime?
+  columnId    String
+  boardId     String
+  column      Column    @relation(fields: [columnId], references: [id])
+  board       Board     @relation(fields: [boardId], references: [id])
+  comments    Comment[]
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  text      String
+  createdAt DateTime @default(now())
+  cardId    String
+  card      Card     @relation(fields: [cardId], references: [id])
+}
